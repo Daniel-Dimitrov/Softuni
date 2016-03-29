@@ -27,6 +27,15 @@ public class CharacterTriangle {
             currentChar++;
         }
 
+        //iterate through the matrix and remove characters where needed
+        // top half
+        for (columnIndex = 0;columnIndex < charNumber;columnIndex++){
+            for (rowIndex = 0; rowIndex < columnIndex ; rowIndex++) {
+                matrix[columnIndex][rowIndex] = ' ';
+            }
+        }
+        
+
         //print the array to the console
         StringBuilder rowOutput = new StringBuilder();
 
