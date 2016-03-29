@@ -15,8 +15,8 @@ public class CharacterTriangle {
 
         // create 2D array for storing the triangle
         char matrix[][] = new char[charNumber][2*charNumber-1];
-        short columnIndex = 0;
-        short rowIndex = 0;
+        Integer columnIndex = 0;
+        Integer rowIndex = 0;
 
         //populate the array with correct character per column
         char currentChar = 'a';
@@ -34,7 +34,12 @@ public class CharacterTriangle {
                 matrix[columnIndex][rowIndex] = ' ';
             }
         }
-        
+        //bottom half
+        for (columnIndex = 0;columnIndex < charNumber;columnIndex++){
+            for (rowIndex = 2*charNumber-2; rowIndex >= 2*charNumber - columnIndex-1; rowIndex--) {
+                matrix[columnIndex][rowIndex] = ' ';
+            }
+        }
 
         //print the array to the console
         StringBuilder rowOutput = new StringBuilder();
