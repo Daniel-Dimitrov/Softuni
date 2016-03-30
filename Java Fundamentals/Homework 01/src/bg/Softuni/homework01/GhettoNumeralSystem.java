@@ -37,5 +37,16 @@ public class GhettoNumeralSystem {
         conversionArr[7]= "Hood";
         conversionArr[8]= "Jam";
         conversionArr[9]= "Mack";
+
+        //convert input number to char array
+        String inputString = inputNumber.toString();
+        char charArr[] = inputString.toCharArray();
+        //define output string
+        StringBuilder outputString = new StringBuilder();
+        //Generate output string
+        for (int i = 0; i < charArr.length; i++) {
+            outputString.append(conversionArr[Character.getNumericValue(charArr[i])]);
+        }
+        System.out.println(outputString.toString());
     }
 }
